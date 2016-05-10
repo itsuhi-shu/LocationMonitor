@@ -250,7 +250,6 @@ static const NSString *LMFirstTimeStateCount = @"lmFirstTimeStateCount";
 
 #pragma mark - Monitor Control
 
-
 - (void)enableLocationMonitor {
     [self.lmLocationManager requestAlwaysAuthorization];
     if (!objc_getAssociatedObject(self, &LMBackgroundQueueKey)) {
@@ -449,6 +448,16 @@ void swizzleMethod_LocationMonitor(Class class, SEL originalSelector, SEL swizzl
         self.lmEntryRegionNotification.alertBody = [NSString stringWithFormat:@"Enter %@", region.identifier];
         [[UIApplication sharedApplication] scheduleLocalNotification:self.lmEntryRegionNotification];
     }
+    if ((self.lmHandlerType&LMHandlerTypeBlockOnEntry)>0) {
+        if (self.lmEntryRegionHandler) {
+            if ([region isMemberOfClass:[CLCircularRegion class]]) {
+                CLCircularRegion *circularRegion = (CLCircularRegion *)region;
+                CLLocation *location = [[CLLocation alloc] initWithLatitude:circularRegion.center.latitude
+                                                                  longitude:circularRegion.center.longitude];
+                self.lmEntryRegionHandler(location, circularRegion.identifier);
+            }
+        }
+    }
 }
 
 - (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
@@ -458,6 +467,16 @@ void swizzleMethod_LocationMonitor(Class class, SEL originalSelector, SEL swizzl
         self.lmExitRegionNotification.applicationIconBadgeNumber = [UIApplication sharedApplication].applicationIconBadgeNumber + 1;
         self.lmExitRegionNotification.alertBody = [NSString stringWithFormat:@"Exit %@", region.identifier];
         [[UIApplication sharedApplication] scheduleLocalNotification:self.lmExitRegionNotification];
+    }
+    if ((self.lmHandlerType&LMHandlerTypeBlockOnExit)>0) {
+        if (self.lmExitRegionHandler) {
+            if ([region isMemberOfClass:[CLCircularRegion class]]) {
+                CLCircularRegion *circularRegion = (CLCircularRegion *)region;
+                CLLocation *location = [[CLLocation alloc] initWithLatitude:circularRegion.center.latitude
+                                                                  longitude:circularRegion.center.longitude];
+                self.lmExitRegionHandler(location, circularRegion.identifier);
+            }
+        }
     }
 }
 

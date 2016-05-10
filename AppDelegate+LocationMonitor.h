@@ -12,14 +12,14 @@
 
 typedef NS_ENUM(NSUInteger, LMMonitorMode) {
     LMMonitorModeNone       = 0,
-    LMMonitorModeBackground = 1,
+    LMMonitorModeBackground = 1<<0,
     LMMonitorModeForeground = 1<<1,
     LMMonitorModeAllTime    = LMMonitorModeBackground|LMMonitorModeForeground
 };
 
 typedef NS_ENUM(NSUInteger, LMHandlerType) {
     LMHandlerTypeNone                = 0,
-    LMHandlerTypeNotificationOnEntry = 1,
+    LMHandlerTypeNotificationOnEntry = 1<<0,
     LMHandlerTypeNotificationOnExit  = 1<<1,
     LMHandlerTypeNotificationBoth    = LMHandlerTypeNotificationOnEntry|LMHandlerTypeNotificationOnExit,
     LMHandlerTypeBlockOnEntry        = 1<<2,
