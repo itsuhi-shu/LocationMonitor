@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,8 +17,93 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Udq-sB-bUW">
+                                <rect key="frame" x="270" y="59" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="stt-PS-z0C"/>
+                                </constraints>
+                                <state key="normal" title="FGstart"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAW-zY-w4u">
+                                <rect key="frame" x="270" y="119" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="e7U-nh-8yF"/>
+                                </constraints>
+                                <state key="normal" title="BGstart"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJg-uq-fgt">
+                                <rect key="frame" x="270" y="179" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="JgC-bg-eOJ"/>
+                                </constraints>
+                                <state key="normal" title="FGstop"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2z-sH-8PN">
+                                <rect key="frame" x="270" y="239" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="PkX-Fq-bCo"/>
+                                </constraints>
+                                <state key="normal" title="BGStop"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FeC-FS-feB">
+                                <rect key="frame" x="250" y="338" width="100" height="33.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="FeC-FS-feB" secondAttribute="height" multiplier="3:1" id="0Tg-yL-Tbk"/>
+                                    <constraint firstAttribute="width" constant="100" id="b6G-jf-QCn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCg-4K-KJi">
+                                <rect key="frame" x="250" y="396" width="100" height="33.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="pCg-4K-KJi" secondAttribute="height" multiplier="3:1" id="Z5U-wW-OZJ"/>
+                                    <constraint firstAttribute="width" constant="100" id="x8y-kJ-Zne"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zio-vD-M5V">
+                                <rect key="frame" x="250" y="453" width="100" height="33.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="UX1-P0-MSW"/>
+                                    <constraint firstAttribute="width" secondItem="Zio-vD-M5V" secondAttribute="height" multiplier="3:1" id="vA7-6G-l9r"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Udq-sB-bUW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="39" id="6uw-Q6-xXY"/>
+                            <constraint firstItem="n2z-sH-8PN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ApO-gC-WH3"/>
+                            <constraint firstItem="Zio-vD-M5V" firstAttribute="top" secondItem="pCg-4K-KJi" secondAttribute="bottom" constant="24" id="GeQ-gG-Pb2"/>
+                            <constraint firstItem="XJg-uq-fgt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Hub-uU-TLW"/>
+                            <constraint firstItem="jAW-zY-w4u" firstAttribute="top" secondItem="Udq-sB-bUW" secondAttribute="bottom" constant="30" id="Jog-t1-oUb"/>
+                            <constraint firstItem="FeC-FS-feB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SLS-Gy-gCf"/>
+                            <constraint firstItem="Zio-vD-M5V" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WPi-g4-HTA"/>
+                            <constraint firstItem="jAW-zY-w4u" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XSp-c3-umo"/>
+                            <constraint firstItem="Udq-sB-bUW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dXv-2k-xzw"/>
+                            <constraint firstItem="XJg-uq-fgt" firstAttribute="top" secondItem="jAW-zY-w4u" secondAttribute="bottom" constant="30" id="efs-3e-tYJ"/>
+                            <constraint firstItem="n2z-sH-8PN" firstAttribute="top" secondItem="XJg-uq-fgt" secondAttribute="bottom" constant="30" id="hXG-FT-Sui"/>
+                            <constraint firstItem="pCg-4K-KJi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oaE-TI-5Lz"/>
+                            <constraint firstItem="FeC-FS-feB" firstAttribute="top" secondItem="n2z-sH-8PN" secondAttribute="bottom" constant="69" id="pnF-y5-WgC"/>
+                            <constraint firstItem="pCg-4K-KJi" firstAttribute="top" secondItem="FeC-FS-feB" secondAttribute="bottom" constant="24.5" id="sz3-H0-cXb"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bgPresentLabel" destination="pCg-4K-KJi" id="SP3-zb-IO0"/>
+                        <outlet property="bgStartButton" destination="jAW-zY-w4u" id="rgN-gv-apw"/>
+                        <outlet property="bgStopButton" destination="n2z-sH-8PN" id="6xY-3k-VcN"/>
+                        <outlet property="presentLabel" destination="FeC-FS-feB" id="7QA-QO-YQL"/>
+                        <outlet property="showLabel" destination="Zio-vD-M5V" id="2la-nJ-tSe"/>
+                        <outlet property="startButton" destination="Udq-sB-bUW" id="3AI-l2-VYL"/>
+                        <outlet property="stopButton" destination="XJg-uq-fgt" id="k86-6x-p37"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

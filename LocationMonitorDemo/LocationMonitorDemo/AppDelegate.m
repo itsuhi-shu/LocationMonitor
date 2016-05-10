@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+#import "AppDelegate+LocationMonitor.h"
+
 @interface AppDelegate ()
 
 @end
